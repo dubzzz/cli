@@ -35,7 +35,7 @@ const questions = [
     name: 'repoHost',
     message:
       "Where is the repository hosted? Hit Enter if it's on GitHub or GitLab",
-    default: function(answers) {
+    default: function (answers) {
       if (answers.repoType === 'github') {
         return 'https://github.com'
       } else if (answers.repoType === 'gitlab') {
@@ -58,10 +58,10 @@ const questions = [
     type: 'input',
     name: 'badgeFile',
     message: 'In which file should the badge be shown?',
-    when: function(answers) {
+    when: function (answers) {
       return answers.needBadge
     },
-    default: function(answers) {
+    default: function (answers) {
       return answers.contributorFile
     },
   },
@@ -84,14 +84,17 @@ const questions = [
     name: 'commitConvention',
     message: 'What commit convention would you want it to use?',
     choices: Object.values(conventions),
-    default: 'none',
+    default: 'angular',
+  },
+  {
+    type: 'confirm',
+    name: 'linkToUsage',
+    message: 'Do you want to add a footer with link to usage?',
+    default: true,
   },
 ]
 
-const uniqueFiles = _.flow(
-  _.compact,
-  _.uniq,
-)
+const uniqueFiles = _.flow(_.compact, _.uniq)
 
 module.exports = function prompt() {
   return git
@@ -116,6 +119,7 @@ module.exports = function prompt() {
           commitConvention: answers.commitConvention,
           contributors: [],
           contributorsPerLine: 7,
+          linkToUsage: answers.linkToUsage,
         },
         contributorFile: answers.contributorFile,
         badgeFile: answers.badgeFile,
