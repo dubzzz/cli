@@ -443,7 +443,8 @@
       "avatar_url": "https://avatars3.githubusercontent.com/u/3743662?v=4",
       "profile": "https://github.com/jdalrymple",
       "contributions": [
-        "code"
+        "code",
+        "test"
       ]
     },
     {
@@ -632,6 +633,17 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/68494132?v=4",
       "profile": "https://rea9lizer.carrd.co",
       "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "dwmkerr",
+      "name": "Dave Kerr",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1926984?v=4",
+      "profile": "http://www.dwmkerr.com",
+      "contributions": [
+        "bug",
+        "test",
         "code"
       ]
     }
